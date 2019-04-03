@@ -1,0 +1,28 @@
+<br>
+<button class="btn btn-success" [routerLink]="['/Clientes/form']">Crear Clientes</button>
+<br><br>
+<mat-card style="max-width:55rem;" ><h3> CLIENTES</h3>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">nombre</th>
+        <th scope="col">apellido</th>
+        <th scope="col">identificacion</th>
+        <th scope="col">fecha</th>
+        <th scope="col">editar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cliente of clientes">
+        <td>{{cliente.id}}</td>
+        <td>{{cliente.nombre}}</td>
+        <td>{{cliente.apellido}}</td>
+        <td>{{cliente.identificacion}}</td>
+        <td>{{cliente.fecha}}</td>
+        <td><button class="btn btn-primary" type="button" name="button" [routerLink]="['/Clientes/form', cliente.id]">Editar</button></td>
+      </tr>
+    </tbody>
+  </table>
+</mat-card>
+<br>

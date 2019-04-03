@@ -1,0 +1,25 @@
+<br>
+<mat-card style="max-width:35rem;" ><h3> CLIENTES</h3>
+  <form class="example-form" (ngSubmit)= "create()">
+
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Name" [(ngModel)]="cliente.nombre" name="nombre">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Apellido"  [(ngModel)]="cliente.apellido" name="apellido" >
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Identificacion"  [(ngModel)]="cliente.identificacion" name="identificacion">
+        </mat-form-field>
+
+    <div class="form-group row" >
+      <div class="col-sm-6">
+        <button type="submit" class="btn btn-success" (ngSubmit)= "create()">Crear</button>
+      </div>
+    </div>
+</form>
+
+</mat-card>
+<br><br>

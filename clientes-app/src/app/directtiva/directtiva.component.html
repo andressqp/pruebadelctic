@@ -1,0 +1,5 @@
+<h2>{{title}}</h2>
+<button mat-raised-button (click)="setHabilitar()" color="accent">{{habilitar==true? 'Ocultar':'Mostrar'}}</button>
+  <mat-list role="list-group" *ngIf="habilitar==true">
+    <mat-list-item role="listitem" *ngFor="let curso of listcursos"><mat-divider></mat-divider>{{ curso }}</mat-list-item>
+  </mat-list>

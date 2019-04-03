@@ -1,0 +1,56 @@
+  <div class="col-md-5 mt-5">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Fecha</th>
+          <th scope="col">Cliente</th>
+          <th scope="col">Opciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let factura of facturas">
+          <td>{{factura.id}}</td>
+          <td>{{factura.fecha.toLocaleDateString()}}</td>
+          <td>{{factura.cliente.nombres}} {{factura.cliente.apellidos}}</td>
+          <td><button class="btn btn-primary" (click)="seleccionFactura(factura)">Ver factura</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+
+  <div class="col-md-8 mt-7" *ngIf="viendoFactura">
+    <div class="card">
+      <h5 class="card-header">Factura</h5>
+      <div class="card-body">
+        <h5 class="card-title">Detalles</h5>
+        <p class="card-text">Cliente: {{facturaSeleccionada.cliente.nombres}} {{facturaSeleccionada.cliente.apellidos}}</p>
+        <p class="card-text">Fecha: {{facturaSeleccionada.fecha.toLocaleDateString()}}</p>
+        <table class="table table-sm">
+          <thead>
+            <tr>
+              <th scope="col">Producto</th>
+              <th scope="col">Cantidad</th>
+              <th scope="col">Valor</th>
+              <th scope="col">Iva</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let detalleFactura of facturaSeleccionada.detalleFactura">
+              <td>{{detalleFactura.producto.nombre}}</td>
+              <td>{{detalleFactura.cantidad}}</td>
+              <td>${{detalleFactura.precio}}</td>
+              <td>{{detalleFactura.producto.iva}}%</td>
+            </tr>
+            <tr>
+              <th>Total</th>
+              <td></td>
+              <td>${{total}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,15 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>{{ title }}</span>
+   <button mat-flat-button color="primary" routerLink="/Clientes"><h5>Clientes</h5></button>
+   <button mat-flat-button color="primary" routerLink="/Facturas"><h5>Facturas</h5></button>
+   <span class="example-spacer"></span>
+      <button mat-button [matMenuTriggerFor]="menu">
+      <mat-icon>view_headline</mat-icon>
+      </button>
+    <mat-menu #menu="matMenu">
+     <button mat-menu-item>Item 1</button>
+     <button mat-menu-item>Item 2</button>
+   </mat-menu>
+  </mat-toolbar-row>
+</mat-toolbar>
